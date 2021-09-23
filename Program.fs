@@ -9,6 +9,14 @@ let from whom =
 
 [<EntryPoint>]
 let main argv =
-    let message = from "F#" // Call the function
-    printfn "Hello world %s" message
+    let list: List<String[]> = [
+        [|"Name"; "Value"|]
+        [|"Erick"; "Hue"|]
+        [|"Cama"; "Objeto"|]
+        [|"Esto"; "Aquello"|]
+        [|"Mar"; "Icon"|]
+    ]
+    let tab = TableParser.DrawTableStruct list
+    printfn "%s" tab
+    let key = Console.ReadKey()
     0 // return an integer exit code
