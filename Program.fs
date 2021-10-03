@@ -21,5 +21,7 @@ let main argv =
         (fun v -> v.Dsc)
         (fun v -> $"{v.Name} {v.Dsc}") |] list
     printfn "%s" tab
-    let key = Console.ReadKey()
+    let key = Utilities.GetHiddenConsoleInput "Este campo sera llenado "
+    printf "Esta se escribio oculto ' %s '" key
+    Console.ReadKey() |> ignore
     0 // return an integer exit code
